@@ -1,0 +1,68 @@
+#N canvas 287 73 886 571 10;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array waveform 67 float 1;
+#A 0 0.142857 0.0428571 -0.514289 -0.542861 -0.600004 -0.61429 -0.628576
+-1.38572 -1.4143 -1.45715 -1.52858 -1.55715 -1.80001 -1.84287 -2.02858
+-2.02858 -2.02858 -2.04287 -2.04287 -2.05716 -2.10716 -2.12859 -2.1643
+-2.20001 -2.25716 -2.30001 -2.32859 -2.34287 -2.35002 -2.35716 -2.35716
+-2.35716 -2.35716 -2.35716 -2.32859 -1.11429 -0.628576 0.771433 1.42858
+1.57144 1.57144 1.58572 1.59049 1.59525 1.60001 1.60715 1.6143 1.62144
+1.62858 1.62858 1.62858 1.62858 1.62858 1.62858 1.62858 1.62858 1.62858
+1.62858 1.62858 1.62858 1.64287 0.0857143 0.0857143 0.0714285 0.0571427
+0.0571427 0.0571427;
+#X coords 0 1 66 -1 200 140 1;
+#X restore 607 54 graph;
+#X obj 37 76 tabosc4~ waveform;
+#X obj 50 29 mtof;
+#X floatatom 134 -32 5 0 0 0 - - -;
+#X obj 45 51 sig~ 100;
+#X obj 124 126 *~;
+#X obj 200 77 tabosc4~ waveform;
+#X obj 204 25 + 3;
+#X obj 255 33 mtof;
+#X obj 299 54 sig~;
+#X obj 337 66 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 264 120 1;
+#X obj 387 161 0;
+#X obj 184 254 svf~;
+#X floatatom 193 181 5 0 0 0 - - -;
+#X obj 271 215 mtof;
+#X obj 331 224 sig~;
+#X floatatom 268 183 5 0 0 0 - - -;
+#X msg 371 46 band;
+#X obj 47 -157 inlet;
+#X obj 91 -157 inlet;
+#X obj 390 319 outlet~;
+#X msg 433 76 low;
+#X obj 134 -157 inlet;
+#X text 339 -157 first: note second: trigger third: cutoff modulation
+;
+#X obj 351 107 del 100;
+#X obj 207 146 adsr 1 10 50 50 100;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 0 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 13 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
+#X connect 10 0 25 0;
+#X connect 11 0 26 0;
+#X connect 12 0 26 0;
+#X connect 13 0 21 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 13 1;
+#X connect 17 0 13 2;
+#X connect 18 0 13 0;
+#X connect 19 0 3 0;
+#X connect 20 0 10 0;
+#X connect 22 0 13 0;
+#X connect 23 0 16 0;
+#X connect 25 0 12 0;
+#X connect 26 0 5 1;
